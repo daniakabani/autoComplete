@@ -1,21 +1,18 @@
-require('dotenv').config({ path: '../.env'});
+const config = require('./config');
 
 module.exports = {
 
   development: {
-    client: process.env.DATABASE_CLIENT,
+    client: config.db.client,
     connection: {
-      host: process.env.host,
-      database: process.env.DATABASE_NAME,
-      user: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD
-    },
-    seeds:{
-      directory: '../seeds'
+      host: config.db.dbHost,
+      database: config.db.dbName,
+      user: config.db.username,
+      password: config.db.password
     },
     pool: {
-      min: Number(process.env.MIN_POOL) || 2,
-      max: Number(process.env.MAX_POOL) || 10
+      min: Number(config.db.dbMinPool) || 2,
+      max: Number(config.db.dbMinPool) || 10
     },
     migrations: {
       tableName: 'knex_migrations'

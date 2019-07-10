@@ -3,9 +3,9 @@ const express = require('express');
 const app = express();
 
 // routes
-const homePage = require('./routes');
+const getBooks = require('./routes');
 
-app.use('/', homePage);
+app.use('/api/v1/', getBooks);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');

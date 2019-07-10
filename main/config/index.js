@@ -1,5 +1,4 @@
-require('dotenv').config({ path: '../../.env' }); // environement config file 
-
+require('dotenv').config();
 
 module.exports = {
     db: {

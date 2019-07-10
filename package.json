@@ -4,10 +4,12 @@
   "description": "full stack auto complete project",
   "main": "server.js",
   "scripts": {
-    "start": "cd server && nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate": "cd main && knex migrate:latest",
-    "seed": "cd main && knex seed:run"
+    "seed": "cd main && knex seed:run",
+    "rollback": "cd main && knex migrate:rollback",
+    "reset": "cd main && knex migrate:rollback && knex migrate:latest && knex seed:run"
   },
   "author": "Dani Alakabani",
   "license": "ISC",

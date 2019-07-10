@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-router.get('/', (req, res) => {
-    // res.send('sup')
-    res.status(201).json({
-        "message": "autocomplete thing"
-    })
-});
+const booksController = require('../controllers/books');
+
+
+router.get('/books', booksController.jsonBooks);
 module.exports = router;
