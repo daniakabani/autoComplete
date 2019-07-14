@@ -10,7 +10,8 @@
     "seed": "cd main && knex seed:run",
     "rollback": "cd main && knex migrate:rollback",
     "resolve": "npm i && cd client && npm i",
-    "reset": "cd main && knex migrate:rollback && knex migrate:latest && knex seed:run"
+    "reset": "cd main && knex migrate:rollback && knex migrate:latest && knex seed:run",
+    "client": "cd client && npm start"
   },
   "author": "Dani Alakabani",
   "license": "ISC",
